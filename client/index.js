@@ -1,4 +1,4 @@
-import webpacklogo from './content/webpack.svg';
+import reactlogo from './content/react.svg';
 import './styles/main.scss';
 
 function component() {
@@ -6,7 +6,7 @@ function component() {
     element.innerHTML = "Hello world!";
 
     var logo = new Image();
-    logo.src = webpacklogo;
+    logo.src = reactlogo;
     element.appendChild(logo);
 
     return element;
