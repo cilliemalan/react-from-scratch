@@ -1,15 +1,13 @@
 import reactlogo from './content/react.svg';
 import './styles/main.scss';
+import ReactDOM from 'react-dom';
+import React from 'react';
 
 function component() {
-    var element = document.createElement('div');
-    element.innerHTML = "Hello world!";
-
-    var logo = new Image();
-    logo.src = reactlogo;
-    element.appendChild(logo);
-
-    return element;
+    return <div>
+        Hello World
+        <img src={reactlogo} />
+    </div>;
 }
 
-document.body.appendChild(component());
+ReactDOM.render(component(), document.body);
