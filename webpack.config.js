@@ -9,6 +9,7 @@ module.exports = {
     entry: {
         app: ['./client/index.js', 'webpack-hot-middleware/client']
     },
+    resolve: { extensions: ['.js', '.jsx'] },
     devtool: 'inline-source-map',
     plugins: [
         new CleanWebpackPlugin([dist]),
