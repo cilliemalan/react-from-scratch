@@ -3,12 +3,35 @@ import './styles/main.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-function component() {
-    return <div>
-        Hello World
-        <img src={reactlogo} />
-    </div>;
+class Greeter extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            enthusiasm: 0
+        };
+
+        this.enthuse = this.enthuse.bind(this);
+    }
+
+    enthuse() {
+        this.setState(state => ({ enthusiasm: state.enthusiasm + 1 }));
+    }
+
+    enthusiasm() {
+        return "!".repeat(this.state.enthusiasm);
+    }
+
+    render() {
+        return <div>
+            {this.props.message}{this.enthusiasm()}
+            <img src={this.props.src} onClick={this.enthuse} />
+        </div>;
+    }
 }
 
 const approot = document.getElementById('react-app');
-ReactDOM.render(component(), approot);
+ReactDOM.render(
+    <Greeter src={reactlogo} message={"Hello World"} />,
+    approot);
