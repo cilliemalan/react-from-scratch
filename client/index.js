@@ -10,4 +10,5 @@ function component() {
     </div>;
 }
 
-ReactDOM.render(component(), document.body);
+const approot = document.getElementById('react-app');
+ReactDOM.render(component(), approot);

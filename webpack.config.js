@@ -13,7 +13,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin([dist]),
         new HtmlWebpackPlugin({
-            title: 'React from scratch'
+            template: 'client/index.ejs'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
