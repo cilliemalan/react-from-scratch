@@ -1,13 +1,16 @@
 import './styles/main.scss';
 import ReactDOM from 'react-dom';
 import React from 'react';
+import { HashRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 import { App } from './App'
 
 const approot = document.getElementById('react-app');
 ReactDOM.render(
     <AppContainer>
-        <App />
+        <HashRouter>
+            <App />
+        </HashRouter>
     </AppContainer>,
     approot);
 
