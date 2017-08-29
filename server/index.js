@@ -18,6 +18,14 @@ app.use(wpmw);
 const wphmw = webpackHotMiddleware(webpackCompiler);
 app.use(wphmw);
 
+//SPA catch
+app.use((req, res) => {
+    const index = webpackCompiler.outputFileSystem.readFileSync(
+        `${webpackconfig.output.path}/index.html`);
+    
+    res.end(index);
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
 
