@@ -7,7 +7,11 @@ const dist = path.resolve(__dirname, 'www');
 
 module.exports = {
     entry: {
-        app: ['./client/index.js', 'webpack-hot-middleware/client']
+        app: [
+            'react-hot-loader/patch',
+            './client/index.js',
+            'webpack-hot-middleware/client'
+        ]
     },
     resolve: { extensions: ['.js', '.jsx'] },
     devtool: 'inline-source-map',
@@ -35,7 +39,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react']
+                        presets: ['env', 'react'],
+                        plugins: ['react-hot-loader/babel']
                     }
                 }
             }
