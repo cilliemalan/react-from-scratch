@@ -1,12 +1,12 @@
 import React from 'react';
-import { Route, Link, HashRouter } from 'react-router-dom'
+import { Route, Link, BrowserRouter } from 'react-router-dom'
 import { List } from './components/List';
 import { Login } from './components/Login';
 import { Preferences } from './components/Preferences';
 import { Reminder } from './components/Reminder';
 
 export function App(props) {
-    return <HashRouter>
+    return <BrowserRouter>
         <div>
             <nav>
                 <Link to="/">Home</Link>
@@ -19,5 +19,5 @@ export function App(props) {
             <Route path="/preferences" component={Preferences} />
             <Route path="/reminder" component={Reminder} />
         </div>
-    </HashRouter>;
+    </BrowserRouter>;
 }
