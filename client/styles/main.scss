@@ -8,5 +8,22 @@ body {
         p.placeholder {
             font-style: italic;
         }
+
+        nav {
+            a {
+                display: inline-block;
+                line-height: 25px;
+                font-weight: bold;
+                padding: 10px;
+                margin: 10px;
+                border: 1px solid white;
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    background: #555;
+                }
+            }
+        }
     }
 }
